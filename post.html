@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gardevoir" />
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Post - Amogus Blog</title>
+</head>
+<body>
+    <header>
+        <div id="HeaderLeftMenu">
+            <a id="HomeButton" href="index.html">
+                <img src="https://64.media.tumblr.com/ca10336aaf79b382de3ac745956324d8/d58a67cd2e682922-42/s1280x1920/6e9a22c917f0d8afb1ec4a20bf12b12672b51038.png" class="ava" alt="Home"/>
+            </a>
+            <div>
+                <h1><a href="index.html">Amogus Blog</a></h1>
+                <nav id="TopicNav">
+                    <a data-topic="GameDev" href="topic.html">GameDev</a>
+                    <a data-topic="Opinion" href="topic.html">Opinion</a>
+                    <a data-topic="Music" href="topic.html">Music</a>
+                </nav>
+            </div>
+        </div>
+        <div id="HeaderRightMenu">
+            <nav id="ButtonNav">
+                <a data-button="Login" href="login.html">Login</a>
+                <a data-button="AddPost" href="addPost.html">Add Post</a>
+                <a data-button="Profile" href="profile.html">Profile</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article id="PostView">
+            <!-- Post details will be inserted here by postController.js -->
+        </article>
+    </main>
+
+    <footer>
+        <p>(c) Amogus Blog 2024</p>
+        <p><a href="about.html">Runs on very cool blog software</a></p>
+    </fileHeader>
+
+    <script src="js/models/postDetailModel.js"></script>
+    <script src="js/controllers/postDetailController.js"></script>
+    <script src="js/views/viewUtils.js"></script>
+    <script src="js/controllers/topicController.js"></script>
+</body>
+</html>

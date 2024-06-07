@@ -1,0 +1,526 @@
+@import "https://arlecchi.no/fonts/tilda-sans/TildaSansVF.css";
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    background-color: #000;
+    color: #fff;
+
+    padding: 0 10px;
+    margin: 40px auto;
+    max-width: 1280px;
+
+    font-family: 'TildaSansVF', 'Helvetica', sans-serif;
+}
+
+body.backgroundedBody {
+    background: radial-gradient(#ffffff00, black), url(https://res.cloudinary.com/disco-elysium/images/f_auto,q_auto/v1608006758/Front-page_2986fb4bc/Front-page_2986fb4bc.png?_i=AA);
+    background-size: cover;
+    min-height: calc(100vh - 2 * 40px);
+}
+
+body.backgroundedBody header {
+    border: 10px solid #000;
+    border-radius: 10px;
+    background-color: #000;
+    box-shadow: 0px 7px 20px 2px #0000008a;
+    color: unset;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+span[contenteditable] {
+    outline: none;
+    border-bottom: 1px solid #fff;
+}
+
+span[contenteditable]::after {
+    display: inline-block;
+    content: " ";
+    width: 30px;
+}
+
+[data-topic] {
+    color: var(--topic-colour);
+}
+
+.postCard_image[data-topic] {
+    background-color: var(--topic-colour);
+}
+
+[data-topic="GameDev"] {
+    --topic-colour: #EE7B49;
+}
+
+[data-topic="Opinion"] {
+    --topic-colour: #F55CD9;
+}
+
+[data-topic="Music"] {
+    --topic-colour: #8862EF;
+}
+
+.ava {
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#HeaderLeftMenu {
+    display: flex;
+    gap: 10px;
+}
+
+#HeaderLeftMenu h1 {
+    margin: 0;
+    font-size: 20px;
+}
+
+#HeaderLeftMenu > div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+nav#TopicNav {
+    display: flex;
+    font-weight: 600;
+    font-size: 16px;
+    gap: 10px;
+}
+
+#HomeButton {
+    -webkit-user-drag: none;
+}
+
+#HomeButton .ava {
+    transition: .3s transform ease-in;
+}
+
+#HomeButton .ava:hover {
+    transform: rotate(360deg);
+}
+
+[data-button] {
+    color: var(--button-colour);
+}
+
+[data-button="Login"] {
+    --button-colour: #00E5AE;
+}
+
+[data-button="AddPost"] {
+    --button-colour: #FAC670;
+}
+
+[data-button="Profile"] {
+    --button-colour: #FF6B6B;
+}
+
+nav#ButtonNav {
+    display: flex;
+    font-weight: 600;
+    font-size: 16px;
+    gap: 10px;
+}
+
+.CenterFormView {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.centerFormViewWrap {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 15px;
+    width: min(720px, 90vw);
+    min-height: 40vh;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #02020252;
+    backdrop-filter: blur(6px);
+    align-items: center;
+}
+
+.centerFormView_illustration {
+    background-color: var(--topic-colour);
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    opacity: .5;
+}
+
+.centerFormView_form form.slickForm {
+    filter: grayscale(1);
+}
+
+#PostListView {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    font-size: 20px;
+
+    max-width: 1024px;
+    margin: auto;
+}
+
+.postCard {
+    display: flex;
+    gap: 30px;
+}
+
+.postCard_details {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 20px;
+}
+
+.postCard h2 {
+    font-size: 42px;
+}
+
+.postCard p {
+    flex: 1;
+    font-weight: 400;
+    color: #D0D0D0;
+}
+
+.postCard_image {
+    border-radius: 15px;
+    width: 330px;
+    height: 195px;
+    transition: .2s transform ease-in-out;
+}
+
+.postCard:hover .postCard_image {
+    transform: translate(0, -5px);
+}
+
+.postCard_topicLink {
+    position: absolute;
+    bottom: 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.paginator {
+    display: flex;
+    justify-content: space-between;
+}
+
+.paginator a {
+    font-weight: 600;
+    color: #FAC670;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-weight: 400;
+    font-size: 20px;
+    color: #D0D0D0;
+    margin-bottom: 35px;
+}
+
+#FooterButtons {
+    display: none;
+}
+
+#TopicInfoView, #UserInfoView {
+    text-align: center;
+}
+
+:is(#TopicInfoView, #UserInfoView) h1 {
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 48px;
+}
+
+#TopicInfoView p, #UserInfoView table {
+    font-size: 22px;
+    color: #d0d0d0;
+    padding-bottom: 20px;
+    border-bottom: 1px solid;
+    border-image: linear-gradient(to right, black, var(--topic-colour), black) 5;
+}
+
+#UserInfoView table {
+    --topic-colour: #fff;
+    width: 100%;
+}
+
+article#PostView {
+    width: min(90vw, 1200px);
+    font-size: 22px;
+    line-height: 1.5;
+    margin: auto;
+}
+
+article#PostView :not(.postHeroImage) {
+    max-width: 760px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+article#PostView :is(h1, h2, h3, h4, h5, h6) {
+    margin-bottom: 6px;
+}
+
+article#PostView h1 {
+    margin-top: 0;
+}
+
+article#PostView h1 a {
+    font-size: 20px;
+    font-weight: 400;
+    color: #00E5AE;
+    float: right;
+    text-decoration: underline;
+}
+
+article#PostView p {
+    margin-bottom: 25px;
+}
+
+article#PostView .postHeroImage {
+    height: 55vh;
+    background-color: var(--topic-colour);
+    border-radius: 15px;
+}
+
+article#PostView :is(.postHeroImage, figure) {
+    margin: 25px 0;
+}
+
+article#PostView .slickForm textarea {
+    min-height: 80vh;
+}
+
+#CommentView {
+    width: min(90vw, 760px);
+    margin: auto;
+    padding-top: 65px;
+    border-top: 1px solid;
+    border-image: linear-gradient(to right, black, var(--topic-colour), black) 5;
+    color: inherit;
+}
+
+#CommentView h2 {
+    font-size: 38px;
+    margin-bottom: 25px;
+}
+
+#CommentView h3 {
+    font-size: 24px;
+    margin-top: 35px;
+}
+
+.comment {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.comment_details_author {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.comment_details_author[data-op="True"] a::after {
+    content: "OP";
+    padding-left: 5px;
+    font-weight: bold;
+    color: #5959ff;
+}
+
+.comment_details_author time {
+    color: #d0d0d0;
+    font-weight: 100;
+    margin-left: 10px;
+}
+
+.comment_details_body {
+    font-size: 18px;
+}
+
+.comment_subComments {
+    padding-left: 58px;
+}
+
+form.slickForm {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 6px;
+    margin: 10px 0;
+    align-items: flex-end;
+}
+
+form.slickForm :is(input:not([type="submit"], [type="reset"]), textarea, select) {
+    border: 0;
+    font-family: inherit;
+    font-size: 20px;
+    padding: 10px;
+    background-color: #162B4A;
+    color: orange;
+    resize: none;
+    outline: none;
+    width: 100%;
+}
+
+form.slickForm textarea {
+    font-size: 18px !important;
+}
+
+.slickButton, form.slickForm :is(button, input:is([type="submit"], [type="reset"])) {
+    position: relative;
+    appearance: none;
+    -webkit-appearance: none;
+    margin-top: 10px;
+    padding: 10px 14px;
+    width: fit-content;
+    font-weight: 700;
+    font-size: 19px;
+    color: #fff;
+    border: none;
+    background: radial-gradient(ellipse at 90% -50%, #24128E 15%, #003382 50%, #162B4A);
+    border-radius: 10px;
+    box-shadow: 0 4px 13.5px 3px rgba(0, 74, 186, 0.55);
+    cursor: pointer;
+    transition: .1s ease-in background, .1s ease-in box-shadow, .1s ease-in transform;
+}
+
+.slickButton:is(:hover, :active), form.slickForm :is(button, input:is([type="submit"], [type="reset"])):is(:hover, :active) {
+    background: radial-gradient(ellipse at 90% -50%, #3472D2 15%, #295DAE 50%, #3B639E);
+}
+
+.slickButton:hover, form.slickForm :is(button, input:is([type="submit"], [type="reset"])):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px 8px rgb(29 101 209 / 55%);
+}
+
+.slickButton:active, form.slickForm :is(button, input:is([type="submit"], [type="reset"])):active {
+    transform: translateY(1px);
+    box-shadow: 0 3px 20px 5px rgb(29 101 209 / 55%);
+}
+
+form.slickForm :is(input:not([type="submit"], [type="reset"]), textarea, select):nth-child(2) {
+    border-radius: 0 0 5px 5px;
+}
+
+form.slickForm :is(input:not([type="submit"], [type="reset"]), textarea, select):last-child {
+    border-radius: 5px 5px 0 0;
+}
+
+form.slickForm :is(input:not([type="submit"], [type="reset"]), textarea, select)::placeholder {
+    color: orange;
+}
+
+@media screen and (max-width: 1045px) {
+    .postCard {
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .postCard {
+        flex-direction: column;
+    }
+
+    .postCard_image {
+        width: unset;
+    }
+
+    .postCard p {
+        margin-bottom: 15px;
+    }
+
+    .centerFormViewWrap {
+        display: block;
+        min-height: unset;
+    }
+
+    article#PostView h1 a {
+        display: block;
+        float: unset;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    footer {
+        flex-direction: column;
+        gap: 15px;
+        margin: 0;
+    }
+
+    #HeaderRightMenu {
+        display: none;
+    }
+
+    #FooterButtons {
+        display: block;
+    }
+
+    .comment_subComments {
+        padding-left: 10px;
+    }
+}
+
+#AboutSection {
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
+}
+
+#AboutSection h1 {
+    margin-bottom: 20px;
+}
+
+#AboutSection p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+#ProfileSection {
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 800px;
+    text-align: center;
+}
+
+.profile-info {
+    margin-top: 20px;
+}
+
+.profile-info h2 {
+    margin-bottom: 10px;
+}
+
+.profile-info p {
+    margin-bottom: 5px;
+    line-height: 1.6;
+}
